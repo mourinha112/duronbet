@@ -59,8 +59,8 @@ export default function Home() {
               <a href="#indicacao" className="text-gray-700 hover:text-primary font-medium transition-colors">
                 Indicação
               </a>
-              <a href="#resultados" className="text-gray-700 hover:text-primary font-medium transition-colors">
-                Resultados
+              <a href="/cotacao" className="text-yellow-600 hover:text-yellow-700 font-medium transition-colors flex items-center">
+                💰 Durons
               </a>
               <a 
                 href="#planos" 
@@ -90,6 +90,7 @@ export default function Home() {
                 <a href="#planos" className="text-gray-700 hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>Grupo VIP</a>
                 <a href="#classes" className="text-gray-700 hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>Classes Turbo</a>
                 <a href="#indicacao" className="text-gray-700 hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>Indicação</a>
+                <a href="/cotacao" className="text-yellow-600 hover:text-yellow-700 font-medium flex items-center" onClick={() => setIsMenuOpen(false)}>💰 Cotação Durons</a>
                 <a href="#resultados" className="text-gray-700 hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>Resultados</a>
                 <a 
                   href="#planos" 
@@ -415,13 +416,13 @@ export default function Home() {
             </div>
 
             {/* Classe Roger Federer */}
-            <div className="bg-primary rounded-2xl p-8 text-white card-hover relative overflow-hidden transform scale-105 shadow-xl shadow-primary/30">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold z-10">
-                MAIS ESCOLHIDO
+            <div className="bg-primary rounded-2xl p-8 pt-10 text-white card-hover relative transform scale-105 shadow-xl shadow-primary/30 mt-6">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1.5 rounded-full text-sm font-bold z-10 whitespace-nowrap shadow-lg">
+                ⭐ MAIS ESCOLHIDO
               </div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 overflow-hidden"></div>
               <div className="relative">
-                <div className="inline-flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-bold mb-4 mt-2">
+                <div className="inline-flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
                   🏆 INTERMEDIÁRIO
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Classe Roger Federer</h3>
@@ -517,7 +518,7 @@ export default function Home() {
               Indique e Ganhe <span className="gradient-text">Durons</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A cada indicação para as Classes Turbo, você acumula <strong>Durons (D$)</strong> que podem ser convertidos em prêmios incríveis!
+              A cada indicação para as Classes Turbo, você acumula <strong>Durons (D$)</strong> que podem ser convertidos em <strong>dinheiro real (R$)</strong>!
             </p>
           </div>
 
@@ -554,23 +555,23 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-yellow-400 text-gray-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
                     4
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-bold text-gray-900 text-lg">Troque por Prêmios</h4>
-                    <p className="text-gray-600">Converta seus Durons em prêmios exclusivos na nossa loja!</p>
+                    <h4 className="font-bold text-gray-900 text-lg">Converta em Dinheiro</h4>
+                    <p className="text-gray-600">Troque seus Durons por Real (R$) a qualquer momento!</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-yellow-50 rounded-2xl border border-yellow-200">
+              <div className="mt-8 p-6 bg-green-50 rounded-2xl border border-green-200">
                 <div className="flex items-center mb-3">
-                  <Share2 className="w-6 h-6 text-yellow-600 mr-2" />
-                  <span className="font-bold text-yellow-800">Sem limite de Durons!</span>
+                  <Share2 className="w-6 h-6 text-green-600 mr-2" />
+                  <span className="font-bold text-green-800">Sem limite de ganhos!</span>
                 </div>
-                <p className="text-yellow-700">
-                  Quanto mais você indica, mais Durons acumula. Troque por raquetes, camisas, ingressos e muito mais!
+                <p className="text-green-700">
+                  Quanto mais você indica, mais Durons acumula. Converta para Real e saque quando quiser!
                 </p>
               </div>
             </div>
@@ -578,7 +579,11 @@ export default function Home() {
             {/* Bonus Cards */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Seus Durons por indicação</h3>
-              <p className="text-center text-gray-500 mb-6 text-sm">1 Duron = R$ 1,00 em prêmios</p>
+              <div className="flex justify-center mb-6">
+                <a href="/cotacao" className="inline-flex items-center bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-500 transition-colors">
+                  💰 1 DURON = R$ 1,00 | Ver Cotação
+                </a>
+              </div>
               
               {/* Nadal Bonus */}
               <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200 flex items-center justify-between">
@@ -593,7 +598,7 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-orange-600">D$ 10</div>
-                  <div className="text-sm text-gray-500">Durons por indicação</div>
+                  <div className="text-sm text-green-600 font-medium">= R$ 10,00</div>
                 </div>
               </div>
 
@@ -610,7 +615,7 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-primary">D$ 50</div>
-                  <div className="text-sm text-gray-500">Durons por indicação</div>
+                  <div className="text-sm text-green-600 font-medium">= R$ 50,00</div>
                 </div>
               </div>
 
@@ -627,41 +632,14 @@ export default function Home() {
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-purple-600">D$ 200</div>
-                  <div className="text-sm text-gray-500">Durons por indicação</div>
+                  <div className="text-sm text-green-600 font-medium">= R$ 200,00</div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl p-6 text-gray-900 text-center mt-6">
+              <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white text-center mt-6">
                 <p className="text-lg mb-2">Exemplo: Indique <span className="font-bold">10 amigos</span> para a Classe Federer</p>
-                <p className="text-3xl font-bold">= D$ 500 Durons!</p>
-                <p className="text-sm mt-2 text-gray-700">Troque por uma raquete profissional ou outros prêmios!</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Prêmios */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Exemplos de Prêmios</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-200">
-                <div className="text-3xl mb-2">🎾</div>
-                <div className="font-semibold text-gray-900">Bola de Tênis</div>
-                <div className="text-primary font-bold">D$ 50</div>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-200">
-                <div className="text-3xl mb-2">👕</div>
-                <div className="font-semibold text-gray-900">Camisa DuronBet</div>
-                <div className="text-primary font-bold">D$ 150</div>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-200">
-                <div className="text-3xl mb-2">🏸</div>
-                <div className="font-semibold text-gray-900">Raquete Pro</div>
-                <div className="text-primary font-bold">D$ 500</div>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-200">
-                <div className="text-3xl mb-2">🎟️</div>
-                <div className="font-semibold text-gray-900">Ingresso VIP</div>
-                <div className="text-primary font-bold">D$ 1000</div>
+                <p className="text-3xl font-bold">D$ 500 = R$ 500,00</p>
+                <p className="text-sm mt-2 text-green-100">Saque direto na sua conta bancária!</p>
               </div>
             </div>
           </div>
